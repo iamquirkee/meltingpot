@@ -1,0 +1,27 @@
+{
+  "name": "meltingpot",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:badoet/meltingpot.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "badoet",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "latest",
+    "grunt": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-coffee": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-coffeelint": "latest",
+    "grunt-sass": "latest",
+    "express": "latest",
+    "hamljs": "latest",
+    "github-oauth": "latest"
+  }
+}
