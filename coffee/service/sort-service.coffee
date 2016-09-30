@@ -31,7 +31,6 @@
       list.sort( (a, b) ->
         aValue = if a[key] then new Date(a[key]).valueOf() else 0
         bValue = if b[key] then new Date(b[key]).valueOf() else 0
-        console.log a.full_name, aValue, " | ", b.full_name, bValue
         if aValue > bValue
           return if isDescending then -1 else 1
         else if aValue < bValue

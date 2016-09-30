@@ -5,7 +5,7 @@
     return (data) ->
 
       @initialized = false
-      _repos = []
+      _repos = null
       @repos = () ->
         return _repos
 
@@ -30,7 +30,6 @@
         apiService.get('github/organization/member')
           .then (repos) =>
             _repos = sortService.date(repos, "pushed_at", true)
-            console.log _repos
             return
 
       return
