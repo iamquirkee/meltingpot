@@ -53,6 +53,5 @@ node_modules
 .DS_Store
 env.json
 
-/public/js/lib/lib.min.js
-/public/css/app.css
-/public/css/lib/lib.min.css
+/public/js/*
+/public/css/*

@@ -1,8 +1,8 @@
 ( ->
 
   RepoListCtrl = ($scope) ->
-    if !$rootScope.globalState.user.repos()
-      $rootScope.globalState.user.retrievePrivateRepos()
+    if !$scope.globalState.user.repos()
+      $scope.globalState.user.retrievePrivateRepos()
     console.log "RepoListCtrl"
     return
 
