@@ -1,27 +1,36 @@
 {
   "name": "meltingpot",
+  "description": "Simplified Github dashboard",
   "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git@github.com:badoet/meltingpot.git"
   },
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "badoet",
   "license": "MIT",
   "devDependencies": {
-    "bower": "latest",
     "grunt": "latest",
     "grunt-contrib-clean": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-coffee": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-coffeelint": "latest",
-    "grunt-sass": "latest",
+    "grunt-sass": "latest"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "connect-redis": "^3.1.0",
     "express": "latest",
-    "hamljs": "latest",
-    "github-oauth": "latest"
+    "express-session": "^1.14.1",
+    "github-oauth": "latest",
+    "pug": "latest",
+    "ng-toast": "^2.0.0",
+    "randomstring": "^1.1.5",
+    "redis": "^2.6.2",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.1"
   }
 }

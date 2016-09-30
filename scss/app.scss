@@ -1,7 +1,6 @@
-$grey: #333;
+@import "mixins";
+@import "color";
+@import "main";
+@import "footer";
 
-body {
-  margin: 0;
-  padding: 0;
-  color: $grey;
-}
+@import "git_repo";

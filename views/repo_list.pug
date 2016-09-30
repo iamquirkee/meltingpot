@@ -1,0 +1,10 @@
+h1
+  Github Repositories
+
+.git-repo-areas
+
+  .git-repo( ng-repeat="repo in globalState.user.repos()" )
+    .repo-name
+      span( ng-bind="repo.full_name" )
+      a.link-out( ng-href="{{repo.html_url}}" target="_blank" )
+

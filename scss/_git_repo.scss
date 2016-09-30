@@ -1,0 +1,26 @@
+.git-repo-areas {
+  margin: auto;
+}
+
+.git-repo {
+  .repo-name {
+    font-size: 1.2rem;
+  }
+  .link-out {
+    position: relative;
+    padding: 0.3rem 0.8rem;
+    display: inline-block;
+    vertical-align: top;
+    height: 1rem;
+    &:before {
+      position: absolute;
+      content: "";
+      border-right: 0.5rem solid $red;
+      border-bottom: 0.5rem solid transparent;
+      width: 0.5rem;
+      height: 0.5rem;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}

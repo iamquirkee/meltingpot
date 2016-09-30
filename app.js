@@ -2,14 +2,25 @@ var express = require('express');
 
 var app = module.exports = express();
 
+var redis_session = require('./service/session.js');
+app.use(redis_session);
+
+// ROUTING
+
 var route_main = require('./routes/index');
 var route_github = require('./routes/github');
+var route_user = require('./routes/user');
 
 app.use('/', route_main);
+
 app.use('/github', route_github);
 
-// https://api.github.com/user/repos?affiliation=organization_member&access_token=e9505fe30f84419bdaa5bc86cb76578185941eee
-// https://api.github.com/repos/Kaligo/kaligo-web/pulls?access_token=e9505fe30f84419bdaa5bc86cb76578185941eee
+// app.use('/api', function(req, res, next) {
+//   res.writeHead(200, {"Content-Type": "application/json"});
+//   next();
+// });
+
+app.use('/api', route_user);
 
 app.listen(3005);
 

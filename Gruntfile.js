@@ -44,9 +44,21 @@ module.exports = function(grunt) {
       },
       libjs: {
         src: [
+          'node_modules/angular/angular.min.js',
+          'node_modules/angular-route/angular-route.min.js',
+          'node_modules/angular-animate/angular-animate.min.js',
+          'node_modules/angular-sanitize/angular-sanitize.min.js',
+          'node_modules/ng-toast/dist/ngToast.min.js',
           'node_modules/oauthio-web/dist/oauth.min.js',
         ],
         dest: 'public/js/lib/lib.min.js',
+      },
+      libcss: {
+        src: [
+          'node_modules/ng-toast/dist/ngToast.min.css',
+          'node_modules/ng-toast/dist/ngToast-animation.min.css',
+        ],
+        dest: 'public/css/lib/lib.min.css',
       }
     },
 
@@ -74,6 +86,12 @@ module.exports = function(grunt) {
         ],
         tasks: ['coffeelint', 'coffee:glob_to_multiple' ],
       },
+      gruntfile: {
+        files: [
+          'Gruntfile.js',
+        ],
+        tasks: ['concat:libjs', 'concat:libcss'],
+      }
     }
 
   });
@@ -91,6 +109,7 @@ module.exports = function(grunt) {
     'coffeelint',
     'coffee:glob_to_multiple',
     'concat:libjs',
+    'concat:libcss',
     'sass',
     'watch',
   ]);
