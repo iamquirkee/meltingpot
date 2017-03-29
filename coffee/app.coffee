@@ -1,25 +1,23 @@
-( ->
-  angular.module("meltingpot", [
-    'ngRoute'
-    'ngSanitize'
-    'ngAnimate'
-    'ngToast'
-  ])
+angular.module("meltingpot", [
+  'ngRoute'
+  'ngSanitize'
+  'ngAnimate'
+  'ngToast'
+])
 
-  .run [
+.run [
 
-    "$rootScope", "MELTER", "User"
-    ($rootScope, MELTER, User) ->
+  "$rootScope", "MELTER", "User"
+  ($rootScope, MELTER, User) ->
 
-      # console.log MELTER
+    # console.log MELTER
 
-      $rootScope.globalState = {
-        user: new User(MELTER)
-      }
+    $rootScope.globalState = {
+      user: new User(MELTER)
+    }
 
-      # console.log $rootScope.globalState.user
+    # console.log $rootScope.globalState.user
 
-      $rootScope.globalState.appInitialized = true
+    $rootScope.globalState.appInitialized = true
 
-  ]
-)()
+]

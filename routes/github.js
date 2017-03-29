@@ -18,6 +18,10 @@ router.get('/organization/member', function(req, res) {
   githubOAuth.getOrganizationMember(req, res);
 });
 
+router.get('/notifications', function(req, res) {
+  githubOAuth.getNotifications(req, res);
+});
+
 // https://api.github.com/user/repos?affiliation=organization_member&access_token=e9505fe30f84419bdaa5bc86cb76578185941eee
 // https://api.github.com/repos/Kaligo/kaligo-web/pulls?access_token=e9505fe30f84419bdaa5bc86cb76578185941eee
 

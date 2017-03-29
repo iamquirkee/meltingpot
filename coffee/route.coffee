@@ -1,15 +1,13 @@
-( ->
-  angular.module("meltingpot")
+angular.module("meltingpot")
 
-  .config [
+.config [
 
-    "$routeProvider"
-    ($routeProvider) ->
+  "$routeProvider"
+  ($routeProvider) ->
 
-      $routeProvider.when("/"
-        controller: "RepoListCtrl"
-        templateUrl: "/html/repo_list"
-      ).otherwise({redirectTo:'/'})
+    $routeProvider.when("/"
+      controller: "RepoListCtrl"
+      templateUrl: "/html/repo_list"
+    ).otherwise({redirectTo:'/'})
 
-  ]
-)()
+]

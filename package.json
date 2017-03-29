@@ -10,11 +10,11 @@
   "license": "MIT",
   "devDependencies": {
     "grunt": "latest",
-    "grunt-contrib-clean": "latest",
-    "grunt-contrib-concat": "latest",
-    "grunt-contrib-coffee": "latest",
-    "grunt-contrib-watch": "latest",
     "grunt-coffeelint": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-coffee": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-watch": "latest",
     "grunt-sass": "latest"
   },
   "dependencies": {
@@ -26,8 +26,9 @@
     "express": "latest",
     "express-session": "^1.14.1",
     "github-oauth": "latest",
-    "pug": "latest",
     "ng-toast": "^2.0.0",
+    "node-sass": "^4.5.1",
+    "pug": "latest",
     "randomstring": "^1.1.5",
     "redis": "^2.6.2",
     "request": "^2.74.0",

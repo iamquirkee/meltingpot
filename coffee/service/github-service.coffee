@@ -1,16 +1,15 @@
-( ->
+githubService = ($rootScope, $window, apiService) ->
 
-  githubService = ($rootScope, $window, apiService) ->
+  @login = () ->
+    $window.location.href = '/github/login'
 
-    @login = () ->
-      $window.location.href = '/github/login'
+  @notifications = (repo) ->
+    apiService.get("github/notifications?repo=#{repo.full_name}")
 
-    return
+  return
 
-  githubService
-    .$inject = ['$rootScope', '$window', 'apiService']
+githubService
+  .$inject = ['$rootScope', '$window', 'apiService']
 
-  angular.module('meltingpot')
-    .service 'githubService', githubService
-
-)()
+angular.module('meltingpot')
+  .service 'githubService', githubService

@@ -1,15 +1,11 @@
-( ->
+RepoListCtrl = ($scope) ->
+  if !$scope.globalState.user.repos()
+    $scope.globalState.user.retrievePrivateRepos()
+  console.log "RepoListCtrl"
+  return
 
-  RepoListCtrl = ($scope) ->
-    if !$scope.globalState.user.repos()
-      $scope.globalState.user.retrievePrivateRepos()
-    console.log "RepoListCtrl"
-    return
+RepoListCtrl
+  .$inject = ['$scope']
 
-  RepoListCtrl
-    .$inject = ['$scope']
-
-  angular.module('meltingpot')
-    .controller 'RepoListCtrl', RepoListCtrl
-
-)()
+angular.module('meltingpot')
+  .controller 'RepoListCtrl', RepoListCtrl

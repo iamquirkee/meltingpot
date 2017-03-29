@@ -57,7 +57,44 @@ githubOAuth.getOrganizationMember = function(req, res) {
     res.end("Unauthorized");
     return;
   }
-  url = githubEndpoint + "user/repos?type=all&sort=updated&direction=desc&access_token=" + token
+  url = `${githubEndpoint}user/repos?type=all&sort=updated&direction=desc&access_token=${token}`
+  request({
+    method: 'GET',
+    uri: url,
+    json: true,
+    headers: {
+      'User-Agent': 'meltingpot'
+    },
+  })
+  .then(function(response) {
+    res.json(response);
+  })
+  .catch(function(err){
+    console.log(err);
+    res.end("error");
+  });
+};
+
+ONEDAY = 1000 * 60 * 60 * 24
+
+githubOAuth.getNotifications = function(req, res) {
+  token = req.session.githubToken;
+  if (!token) {
+    res.end("Unauthorized");
+    return;
+  }
+  repo = req.query.repo;
+  if(!repo) {
+    res.end("Invalid");
+    return;
+  }
+
+  today = new Date();
+  lastWeek = new Date(today - ONEDAY * 7);
+  lastWeekStr = `${lastWeek.getFullYear()}-${lastWeek.getMonth() + 1}-${lastWeek.getDay()}`;
+
+  url = `${githubEndpoint}repos/${repo}/notifications?since=${lastWeekStr}&access_token=${token}`;
+  console.log(url);
   request({
     method: 'GET',
     uri: url,
