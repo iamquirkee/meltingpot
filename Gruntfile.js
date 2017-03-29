@@ -84,7 +84,7 @@ module.exports = function(grunt) {
           'coffee/**/*.coffee',
           'spec/coffee/**/*.coffee'
         ],
-        tasks: ['coffeelint', 'coffee:glob_to_multiple' ],
+        tasks: [ 'coffee:glob_to_multiple' ],
       },
       gruntfile: {
         files: [
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
 
   // Run "grunt" to start the go server and watch scss files for recompilation
   grunt.registerTask('default', [
-    'coffeelint',
+    // 'coffeelint',
     'coffee:glob_to_multiple',
     'concat:libjs',
     'concat:libcss',

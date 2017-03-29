@@ -1,12 +1,12 @@
-RepoListItemCtrl = ($scope, githubService) ->
+ListItemCtrl = ($scope, githubService) ->
 
   $scope.getNotifications = () ->
     githubService.notifications($scope.repo)
 
   return
 
-RepoListItemCtrl
+ListItemCtrl
   .$inject = ['$scope', 'githubService']
 
 angular.module('meltingpot')
-  .controller 'RepoListItemCtrl', RepoListItemCtrl
+  .controller 'ListItemCtrl', ListItemCtrl
