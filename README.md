@@ -3,9 +3,9 @@
 Dependencies:
 
 1. NodeJS (version 6 and above would be good)
-2. Yarn (optional, you can just use NPM) A [see here](https://yarnpkg.com/lang/en/docs/install/)
+2. Yarn (optional, you can just use NPM) [see here](https://yarnpkg.com/lang/en/docs/install/)
 3. Grunt - install with `npm install -g grunt-cli` or `yarn global add grunt-cli`
-4. Redis - install redis on your local machine and start it up A [download](https://redis.io/download)
+4. Redis - install redis on your local machine and start it up [download](https://redis.io/download)
 
 To setup:
 
