@@ -90,10 +90,10 @@ githubOAuth.getNotifications = function(req, res) {
   }
 
   today = new Date();
-  lastWeek = new Date(today - ONEDAY * 7);
-  lastWeekStr = `${lastWeek.getFullYear()}-${lastWeek.getMonth() + 1}-${lastWeek.getDay()}`;
+  lastMonth = new Date(today - ONEDAY * 30);
+  lastMonthStr = `${lastMonth.getFullYear()}-${lastMonth.getMonth() + 1}-${lastMonth.getDay()}`;
 
-  url = `${githubEndpoint}repos/${repo}/notifications?since=${lastWeekStr}&access_token=${token}`;
+  url = `${githubEndpoint}repos/${repo}/notifications?since=${lastMonthStr}&access_token=${token}`;
   console.log(url);
   request({
     method: 'GET',
