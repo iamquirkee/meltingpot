@@ -6,6 +6,12 @@ h1
   .git-repo( ng-repeat="repo in globalState.user.repos()" ng-controller="ListItemCtrl" )
     .repo__name
       a( ng-href="{{repo.html_url}}" ng-bind="repo.name" target="_blank" )
+      span( ng-click="getNotifications(repo.full_name)")  - Get Notifications!
+    ul.repo__notifications
+      span.close( ng-click="closeNotifications()" ng-if="notifications.length > 0" ) x
+      li( ng-repeat= "notification in notifications" )
+        span.type( ng-bind="notification.subject.type" )
+        span.title( ng-bind="notification.subject.title" )
     .repo__description
       span( ng-bind="repo.description" )
     .repo__info

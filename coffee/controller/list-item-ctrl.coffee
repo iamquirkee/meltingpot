@@ -1,7 +1,30 @@
 ListItemCtrl = ($scope, githubService) ->
 
-  $scope.getNotifications = () ->
-    githubService.notifications($scope.repo)
+  $scope.notifications = [];
+
+  $scope.closeNotifications = () ->
+    $scope.notifications = [];
+    return
+
+  $scope.getNotifications = (repo) ->
+
+    $scope.closeNotifications();
+    
+    githubService.notifications(repo)
+      .then (response) ->
+        if(response == 'error')
+          $scope.notifications.push({
+            subject: {
+              type: 'Error',
+              title: 'Something went wrong :<'
+            }
+          });
+        else 
+          for notification in response
+            $scope.notifications.push(notification)
+            console.log(notification)
+    
+    return
 
   $scope.colors = {
     "Mercury": "#ff2b2b", 

@@ -20,13 +20,43 @@
 
             span {
                 font-size: 0.5rem;
+                cursor: pointer;
             }
 
         }
 
-        &__forked {
-            font-size: 0.75rem;
-            margin-bottom: 1rem;
+        &__notifications {
+            margin: 0 0 1.325rem 0;
+            padding: 0 0 0 15px;
+
+            .close {
+                position: absolute;
+                margin: 3px 0 0 -15px;
+                color: #DB5A51;
+                font-size: 0.75rem;
+                cursor: pointer;
+            }
+
+            li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                .type {
+                    width: 100%;
+                    display: inline-block;
+                    color: #DB5A51;
+                    font-size: 0.525rem;
+                }
+
+                .title {
+                    width: 100%;
+                    display: inline-block;
+                    font-size: 0.75rem;
+                }
+
+            }
+
         }
 
         &__description {
